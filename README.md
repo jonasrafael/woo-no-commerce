@@ -6,6 +6,9 @@ _This implementation is made ​​to remove some of features present in woocomm
 ##Editors
 * Jonas Rafael Rossatto, PRFVR
 
+#Contributors
+* Claudio Sanches
+
 ================
 
 ###This Plugin
