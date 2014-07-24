@@ -1,4 +1,4 @@
-#woo(not)commerce
+#woo(no)commerce
 You love woocommerce, but do not want to sell, just advantage... enjoy.
 
 _This implementation is made ​​to remove some of features present in woocommerce. If you use this code, improve it and share._
