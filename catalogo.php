@@ -1,18 +1,15 @@
 <?php
-
 /*
-Plugin Name: Woo-notcommmerce.
+Plugin Name: Woo-no-commmerce.
 Description: this plugin will be available for wordpress soon.
 Author: Jonas Rafael Rossatto
-Version: 0.1
+Version: 0.2
 Author URI: http://PRFVR.com/
 License: GPLv2 or later
-
 
 /**
   WooCommerce - Product attributs HTML list
  */
- 
 function custom_woocommerce_attribute($html, $attribute, $values) {
     $html = '<ul>';
     foreach ($values as $value) {
@@ -54,7 +51,11 @@ add_filter('woocommerce_product_tabs', 'cs_register_woocommerce_product_tab');
  * @return string
  */
 function cs_woocommerce_custom_tab_view() {
-    echo '<ul><h2>Produto</h2><li>Peso (tem que aparecer aqui, não no info adicionais)</li><li>Peso Líquido</li><li>Dimensões (tem que aparecer aqui tbem)</li></ul>';
+    global $product;
+// Peso
+
+    echo '<ul><h2>Produto</h2><li>Peso ', $product->get_weight() . ' ' . esc_attr(get_option('woocommerce_weight_unit')), '</li><li>Peso Líquido</li><li>Dimensões ', $product->get_dimensions();
+    '(tem que aparecer aqui tbem)</li></ul>';
     echo '<ul><h2>Dados da Caixa</h2><li>Peso</li><li>Peso Líquido</li><li>Peso Bruto</li><li>Dimensões</li></ul>';
     echo '<ul><h2>Normatização</h2><li>Lastro</li><li>Camadas</li><li>Total</li></ul>';
 }
@@ -63,6 +64,7 @@ function cs_woocommerce_custom_tab_view() {
   WooCommerce -  Renaming Tabs
  */
 add_filter('woocommerce_product_tabs', 'woo_rename_tabs', 98);
+add_filter('wc_product_enable_dimensions_display', '__return_false');
 
 function woo_rename_tabs($tabs) {
 
