@@ -7,7 +7,7 @@ _This implementation is made ​​to remove some of features present in woocomm
 
 ### Descrição em Português: ###
 
-Faça seu**woocommerce** virar um catálago.
+Faça seu **woocommerce** virar um catálago.
 
 
 
