@@ -1,7 +1,15 @@
 #woo(no)commerce
+**Tags:** woocommerce, price, atributes, tabs, download, metabox
 You love woocommerce, but do not want to sell, just advantage... enjoy.
 
 _This implementation is made ​​to remove some of features present in woocommerce. If you use this code, improve it and share._
+
+
+### Descrição em Português: ###
+
+Faça seu**woocommerce** virar um catálago.
+
+
 
 ##Editors
 * Jonas Rafael Rossatto, PRFVR
@@ -20,3 +28,18 @@ _This implementation is made ​​to remove some of features present in woocomm
 * Have more textfields
 
 help improve!
+
+### 0.1 ###
+
+* claudiosanches colaborou: Lista com atributos HTML.
+* jonasrafael começou o projeto.
+* Nova custom tab
+* prfvr, woo(not)comerce!
+
+## License ##
+
+WooCommerce Boleto is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+
+WooCommerce Boleto is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with WooCommerce Boleto. If not, see <http://www.gnu.org/licenses/>.
