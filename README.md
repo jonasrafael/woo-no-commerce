@@ -1,5 +1,5 @@
 #woo(no)commerce
-**Tags:** woocommerce, price, atributes, tabs, download, metabox
+**Tags:** woocommerce, price, atributes, tabs, download, metabox, catalog
 You love woocommerce, but do not want to sell, just advantage... enjoy.
 
 _This implementation is made ​​to remove some of features present in woocommerce. If you use this code, improve it and share._
