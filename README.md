@@ -11,10 +11,10 @@ Faça seu **woocommerce** virar um catálago.
 
 
 ##Editors
-* Jonas Rafael Rossatto, PRFVR
+* Jonas Rafael Rossatto
 
 #Contributors
-* Claudio Sanches, Woothemes
+* Claudio Sanches
 
 ================
 
