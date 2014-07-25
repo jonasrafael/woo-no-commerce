@@ -32,7 +32,7 @@ help improve!
 
 ### 0.2 ###
 * Hide tabs custom.js
-* Remove Price and Chakout into wp-admin to default **shop_manager** 
+* now remove price and checkout into wp-admin to **shop_manager** user.
 
 ### 0.1 ###
 
