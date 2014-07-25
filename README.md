@@ -29,6 +29,11 @@ Faça seu **woocommerce** virar um catálago.
 
 help improve!
 
+
+### 0.2 ###
+* Hide tabs custom.js
+* Remove Price and Chakout into wp-admin to default **shop_manager** 
+
 ### 0.1 ###
 
 * claudiosanches colaborou: Lista com atributos HTML.
