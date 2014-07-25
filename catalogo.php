@@ -33,14 +33,15 @@ add_filter('woocommerce_attribute', 'custom_woocommerce_attribute', 10, 3);
 remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30);
 
 /**
- * Register WooCommerce product tabs.
- * 
+ * Register new Tab MoreDetails on WooCommerce Front-end product tabs.
+ * If you want, change the name.
  * @param  array $tabs Default WooCommerce tabs.
- * @return array       New tabs.
+ * @return array  MoreDetails  New tabs.
  */
+
 function cs_register_woocommerce_product_tab($tabs) {
-    $tabs['table_name'] = array(
-        'title' => __('Estocagem', 'textdomain'),
+    $tabs['MoreDetails'] = array(
+        'title' => __('More Details', 'textdomain'),
         'priority' => 60,
         'callback' => 'cs_woocommerce_custom_tab_view'
     );
@@ -51,24 +52,21 @@ function cs_register_woocommerce_product_tab($tabs) {
 add_filter('woocommerce_product_tabs', 'cs_register_woocommerce_product_tab');
 
 /**
- * Creates a view to the custom tab.
- * 
+ * Creates a view to More Details on the custom tab.
+ * thanks, claudiosanches!
  * @return string
  */
 function cs_woocommerce_custom_tab_view() {
     global $product;
 
-
-// Peso
-
-    echo '<ul><h2>Produto</h2><li>Peso ', $product->get_weight() . ' ' . esc_attr(get_option('woocommerce_weight_unit')), '</li><li>Peso Líquido</li><li>Dimensões ', $product->get_dimensions();
-    '(tem que aparecer aqui tbem)</li></ul>';
-    echo '<ul><h2>Dados da Caixa</h2><li>Peso</li><li>Peso Líquido</li><li>Peso Bruto</li><li>Dimensões</li></ul>';
-    echo '<ul><h2>Normatização</h2><li>Lastro</li><li>Camadas</li><li>Total</li></ul>';
+    echo '<h2>Product</h2><li>Weight: <strong>', $product->get_weight() . ' ' . esc_attr(get_option('woocommerce_weight_unit')), '</strong></li>';
+    echo '<li>Dimensions: <strong>', $product->get_dimensions(), '</strong></li>';
+ //   echo '<li>Use here to add More Details of your product</li>';
 }
 
 /*
  * WooCommerce -  Renaming Tabs
+ if you want another name. Use!
  */
 
 add_filter('woocommerce_product_tabs', 'woo_rename_tabs', 98);
@@ -182,16 +180,15 @@ function woo_add_custom_general_fields() {
     global $woocommerce, $post;
 
     woocommerce_wp_textarea_input(
-    //array
+    //use here to define what u want on admin...
     );
 }
 
 function woo_add_custom_general_fields_save($post_id) {
-    // Change array to your array value
-    
-    //$woocommerce_textarea = $_POST['array'];
+    // Textarea
+    //$woocommerce_textarea = $_POST['_sampleOgg'];
 //    if (!empty($woocommerce_textarea))
-    //      update_post_meta($post_id, 'array', esc_html($woocommerce_textarea));
+    //      update_post_meta($post_id, '_sampleOgg', esc_html($woocommerce_textarea));
 }
 ?>
 
