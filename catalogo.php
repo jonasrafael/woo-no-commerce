@@ -4,7 +4,7 @@
   Plugin Name: Woo-no-commmerce.
   Description: this plugin will be available for wordpress soon.
   Author: Jonas Rafael Rossatto
-  Version: 0.1
+  Version: 0.3
   Author URI: http://PRFVR.com/
   License: GPLv2 or later
 
