@@ -187,10 +187,11 @@ function woo_add_custom_general_fields() {
 }
 
 function woo_add_custom_general_fields_save($post_id) {
-    // Textarea
-    //$woocommerce_textarea = $_POST['_sampleOgg'];
+    // Change array to your array value
+    
+    //$woocommerce_textarea = $_POST['array'];
 //    if (!empty($woocommerce_textarea))
-    //      update_post_meta($post_id, '_sampleOgg', esc_html($woocommerce_textarea));
+    //      update_post_meta($post_id, 'array', esc_html($woocommerce_textarea));
 }
 ?>
 
