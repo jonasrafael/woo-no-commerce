@@ -1,15 +1,18 @@
 <?php
-/*
-Plugin Name: Woo-no-commmerce.
-Description: this plugin will be available for wordpress soon.
-Author: Jonas Rafael Rossatto
-Version: 0.2
-Author URI: http://PRFVR.com/
-License: GPLv2 or later
 
-/**
-  WooCommerce - Product attributs HTML list
+/*
+  Plugin Name: Woo-no-commmerce.
+  Description: this plugin will be available for wordpress soon.
+  Author: Jonas Rafael Rossatto
+  Version: 0.1
+  Author URI: http://PRFVR.com/
+  License: GPLv2 or later
+
+
+  /**
+ * WooCommerce - Product attributs HTML list
  */
+
 function custom_woocommerce_attribute($html, $attribute, $values) {
     $html = '<ul>';
     foreach ($values as $value) {
@@ -23,8 +26,10 @@ function custom_woocommerce_attribute($html, $attribute, $values) {
 
 add_filter('woocommerce_attribute', 'custom_woocommerce_attribute', 10, 3);
 
-/* WooCommerce - Remove add to cart button in product page
+/*
+ * WooCommerce - Remove add to cart button in product page
  */
+
 remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30);
 
 /**
@@ -52,6 +57,8 @@ add_filter('woocommerce_product_tabs', 'cs_register_woocommerce_product_tab');
  */
 function cs_woocommerce_custom_tab_view() {
     global $product;
+
+
 // Peso
 
     echo '<ul><h2>Produto</h2><li>Peso ', $product->get_weight() . ' ' . esc_attr(get_option('woocommerce_weight_unit')), '</li><li>Peso Líquido</li><li>Dimensões ', $product->get_dimensions();
@@ -61,8 +68,9 @@ function cs_woocommerce_custom_tab_view() {
 }
 
 /*
-  WooCommerce -  Renaming Tabs
+ * WooCommerce -  Renaming Tabs
  */
+
 add_filter('woocommerce_product_tabs', 'woo_rename_tabs', 98);
 add_filter('wc_product_enable_dimensions_display', '__return_false');
 
@@ -118,8 +126,8 @@ add_action('wp_head', 'buffer_start');
 add_action('wp_footer', 'buffer_end');
 
 
-/* Hide Prices and checkout
- * 
+/*
+ * Hide Prices and checkout
  */
 
 remove_action('woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart');
@@ -142,7 +150,7 @@ function custom_variation_price($price, $product) {
 }
 
 /*
- * Block selectabs metaboxs in custom.js
+ * Block selectabs metaboxs to shop_manager in custom.js
  */ if (current_user_can('shop_manager')) {
 
     function load_custom_js($page_hook) {
@@ -161,76 +169,28 @@ function custom_variation_price($price, $product) {
 
     add_action('admin_enqueue_scripts', 'load_custom_js');
 } // if current_user_can('some_role)
+//
 // Display Fields
 add_action('woocommerce_product_options_general_product_data', 'woo_add_custom_general_fields');
 
 // Save Fields
 add_action('woocommerce_process_product_meta', 'woo_add_custom_general_fields_save');
 
+// Enjoy you'r Custom Text Fields
 function woo_add_custom_general_fields() {
 
     global $woocommerce, $post;
 
-
-
-    // Text Field
     woocommerce_wp_textarea_input(
-            array(
-                'id' => '_pesoliquido',
-                'label' => __('Peso Líquido', 'woocommerce'),
-                'placeholder' => '',
-                'desc_tip' => 'true',
-                'description' => __('.', 'woocommerce')
-    ));
-    woocommerce_wp_textarea_input(
-            array(
-                'id' => '_sampleOgg',
-                'label' => __('Sample Ogg', 'woocommerce'),
-                'placeholder' => '',
-                'desc_tip' => 'true',
-                'description' => __('Coloque o Sample 30 segundos em OGG aqui.', 'woocommerce')
-            )
-    );
-    woocommerce_wp_textarea_input(
-            array(
-                'id' => '_discoCompleto',
-                'label' => __('Disco Completo', 'woocommerce'),
-                'placeholder' => '',
-                'desc_tip' => 'true',
-                'description' => __('Marque aqui se esse produto é um disco completo!.', 'woocommerce')
-            )
-    );
-    woocommerce_wp_textarea_input(
-            array(
-                'id' => '_discoCompleto',
-                'label' => __('Disco Completo', 'woocommerce'),
-                'placeholder' => '',
-                'desc_tip' => 'true',
-                'description' => __('Marque aqui se esse produto é um disco completo!.', 'woocommerce')
-            )
+    //array
     );
 }
 
 function woo_add_custom_general_fields_save($post_id) {
-
     // Textarea
-    $woocommerce_textarea = $_POST['_sampleMp3'];
-
-    if (!empty($woocommerce_textarea))
-        update_post_meta($post_id, '_sampleMp3', esc_html($woocommerce_textarea));
-
-    // Textarea
-    $woocommerce_textarea = $_POST['_sampleOgg'];
-
-    if (!empty($woocommerce_textarea))
-        update_post_meta($post_id, '_sampleOgg', esc_html($woocommerce_textarea));
-
-
-    // Textarea
-    $woocommerce_textarea = $_POST['_discoCompleto'];
-
-    if (!empty($woocommerce_textarea))
-        update_post_meta($post_id, '_discoCompleto', esc_html($woocommerce_textarea));
+    //$woocommerce_textarea = $_POST['_sampleOgg'];
+//    if (!empty($woocommerce_textarea))
+    //      update_post_meta($post_id, '_sampleOgg', esc_html($woocommerce_textarea));
 }
-
 ?>
+
