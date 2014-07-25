@@ -36,9 +36,9 @@ help improve!
 
 ### 0.1 ###
 
-* claudiosanches colaborou: Lista com atributos HTML.
-* jonasrafael começou o projeto.
-* Nova custom tab
+* claudiosanches collaborated: A list of HTML attributes on front-end.
+* jonasrafael started this with hide prices and checkout.
+* New custom tab
 * prfvr, woo(not)comerce!
 
 ## License ##
